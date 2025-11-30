@@ -1,0 +1,284 @@
+/* ================================
+   ACCUEIL : HERO + FEATURES + SALLES
+   ================================ */
+
+/* Hero principal */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 72vh;
+  border-radius: var(--radius-lg);
+  margin-top: 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #0a1329;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  opacity: .35;
+  filter: saturate(130%) contrast(110%);
+  pointer-events: none;
+}
+
+.hero-bg video,
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 32px 16px;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 10px;
+}
+
+.hero-sub {
+  max-width: 640px;
+  margin: 0 auto 18px;
+  color: #d0d8ee;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  font-size: .9rem;
+  color: #c3cbe4;
+}
+
+.hero-meta span {
+  background: rgba(0,0,0,.35);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Boutons génériques */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ffb703, #fb8500);
+  color: #111;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+/* Features (3 cartes) */
+.features {
+  display: grid;
+  gap: var(--space);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin: 32px 0;
+}
+
+.feature-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 16px;
+  border-radius: var(--radius);
+}
+
+.feature-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(15,50,90,.9);
+}
+
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.feature-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.feature-desc {
+  margin: 6px 0 10px;
+  font-size: .95rem;
+  color: #d0d8ea;
+}
+
+.feature-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.feature-chip {
+  font-size: .8rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.16);
+}
+
+/* Salles / stades */
+.stadiums {
+  margin: 40px 0;
+}
+
+.stadium-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.stadium-grid {
+  display: grid;
+  gap: var(--space);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.stadium-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 18px rgba(0,0,0,.25);
+}
+
+.stadium-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.stadium-info {
+  padding: 14px;
+}
+
+/* Bloc "À propos" */
+.about {
+  margin: 50px 0;
+  background: #0d1836;
+  border: 1px solid var(--line);
+  padding: 20px;
+  border-radius: var(--radius);
+}
+
+/* Micro animation reveal (si pas déjà) */
+.reveal { opacity: 0; transform: translateY(20px); }
+.reveal.in { opacity: 1; transform: none; transition: .6s; }
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  color: #cfd6e6;
+  padding: 16px 0;
+  margin-top: 40px;
+  font-size: .9rem;
+}
+
+/* Canvas d’effets (optionnel) */
+.fx {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ================================
+   PAGE RÉSERVATIONS (ex-billets.html)
+   ================================ */
+
+.page-title {
+  margin: 20px 0 10px;
+}
+
+.page-sub {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* Filtres de recherche (barre de recherche, ville, date) */
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.filters input,
+.filters select {
+  background: #0f1a33;
+  color: var(--fg);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 40px;
+}
+
+/* Grille des créneaux (slots) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* Cartes des créneaux */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
